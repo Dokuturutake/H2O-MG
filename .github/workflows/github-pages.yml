@@ -44,7 +44,7 @@ jobs:
         run: dotnet publish H2O-MG/H2O-MG.csproj -p:GHPages=true -p:GHPagesBase=/ -c:Release -o:publish
 
       - name: Upload Pages Artifact # Pagesのアーティファクトをアップロードします。
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "publish/wwwroot" # アップロードするパスを指定します。
 
