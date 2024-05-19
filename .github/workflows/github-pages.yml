@@ -44,10 +44,10 @@ jobs:
         run: dotnet publish H2O-MG/H2O-MG.csproj -p:GHPages=true -p:GHPagesBase=/ -c:Release -o:publish
 
       - name: Upload Pages Artifact # Pagesのアーティファクトをアップロードします。
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "publish/wwwroot" # アップロードするパスを指定します。
 
       - name: Deploy to GitHub Pages # GitHub Pagesにデプロイします。
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
