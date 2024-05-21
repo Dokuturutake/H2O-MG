@@ -41,7 +41,7 @@ jobs:
         run: dotnet workload install wasm-tools
 
       - name: Publish # アプリケーションをパブリッシュします。
-        run: dotnet publish H2O-MG/H2O-MG.csproj -p:GHPages=true -p:GHPagesBase=/ -c:Release -o:publish
+        run: dotnet publish H2O-MG/H2O-MG.csproj -p:GHPages=true -c:Release -o:publish
 
       - name: Upload Pages Artifact # Pagesのアーティファクトをアップロードします。
         uses: actions/upload-pages-artifact@v3
@@ -51,7 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages # GitHub Pagesにデプロイします。
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: publish/wwwroot
-          force_orphan: true
